@@ -1774,82 +1774,104 @@ section,
 }
 
 @media only screen and (max-width: 480px) {
+
+
+  /* Línea del timeline */
   .main-timeline:before {
-    left: 0;
+    left: 0; /* Línea vertical en el lado izquierdo */
+    width: 3px; /* Ancho de la línea */
   }
 
+  /* Configuración del timeline general */
+  .main-timeline .timeline {
+    width: 100%; /* Ocupa todo el ancho */
+    float: none; /* Quita flotantes */
+    margin-bottom: 30px; /* Espaciado uniforme entre items */
+    position: relative; /* Necesario para posicionar los círculos pequeños */
+  }
+
+  /* Círculos al inicio y al final del timeline */
   .main-timeline .timeline:first-child:before,
   .main-timeline .timeline:last-child:before {
-    left: -12px !important;
-    right: auto !important;
+    content: "";
+    width: 15px; /* Tamaño del círculo */
+    height: 15px;
+    border-radius: 50%; /* Forma circular */
+    background: #fff; /* Fondo blanco */
+    border: 3px solid rgba(211, 207, 205, 1); /* Borde */
+    position: absolute;
+    left: 0; /* Alineado con la línea vertical */
+    transform: translateX(-50%); /* Ajusta el centrado respecto a la línea */
+    z-index: 2; /* Asegura que esté encima de la línea */
+    display:none;
   }
 
-  .main-timeline .circle,
-  .main-timeline .timeline:nth-child(2n) .circle {
-    width: 130px;
-    height: 130px;
-    float: none;
-    margin: 0 auto;
+  /* Configuración de círculos del contenido */
+  .main-timeline .circle {
+    width: 80px; /* Tamaño más pequeño para móviles */
+    height: 80px;
+    margin: 0 auto; /* Centra el círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Evita que la imagen se desborde */
   }
 
+  /* Imágenes dentro de los círculos */
+  .main-timeline .circle img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%; /* Mantiene el formato circular */
+  }
+
+  .main-timeline .circle:hover {
+    transform: scale(1.3);
+    /* Agranda el círculo al 110% */
+    background: rgba(100, 149, 237, 0.5);
+    /* Azul claro translúcido */
+    border-color: rgba(11, 147, 3, 0.8);
+    /* Azul acero translúcido */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    /* Sombra más pronunciada */
+  }
+  
+  .main-timeline .circle-link {
+    display: inline-block; /* Asegura que el enlace se adapte al tamaño del círculo */
+    text-decoration: none; /* Elimina subrayados predeterminados */
+  }
+
+  /* Contenido del timeline */
+  .main-timeline .timeline-content {
+    padding: 10px; /* Relleno más pequeño para dispositivos móviles */
+    text-align: center; /* Centra el texto para mejor lectura */
+    position: relative;
+  }
+
+  /* Eliminar barras horizontales */
   .main-timeline .timeline-content:before {
-    width: 99.5%;
-    top: 68px;
-    left: 0.5%;
+    display: none; /* Oculta las líneas horizontales */
   }
 
-  .main-timeline .circle span {
-    line-height: 115px;
-    font-size: 60px;
-  }
-
-  .main-timeline .circle:before,
-  .main-timeline .circle span:before,
-  .main-timeline .circle span:after,
-  .main-timeline .icon {
-    display: none;
-  }
-
-  .main-timeline .content,
-  .main-timeline .timeline:nth-child(2n) .content {
-    padding: 0 10px;
-  }
-
+  /* Años en el timeline */
   .main-timeline .year {
-    margin-bottom: 15px;
+    margin-bottom: 10px; /* Espaciado más pequeño */
+    font-size: 1rem; /* Ajusta tamaño de fuente */
+    text-align: center;
   }
 
+  /* Descripciones */
   .main-timeline .description {
-    text-align:left;
+    font-size: 0.85rem; /* Tamaño de texto reducido */
+    line-height: 1.4; /* Mejor separación entre líneas */
+    text-align: justify; /* Para lectura más fluida */
+    padding: 0 10px; /* Ajusta márgenes laterales */
+  }
+
+  /* Ajustes para el contenido */
+  .main-timeline .content {
+    padding: 0 10px; /* Ajusta los márgenes internos */
   }
 }
-
-.typed2 {
-  display: inline; /* Asegura que el texto y el cursor estén en la misma línea */
-  white-space: nowrap; /* Evita que el texto y el cursor se dividan en líneas separadas */
-}
-
-.typed2-cursor {
-  display: inline-block; /* Asegura que el cursor esté alineado con el texto */
-  font-size: inherit !important; /* Hereda el tamaño de la fuente del texto */
-  line-height: inherit; /* Hereda la altura de línea del texto */
-  height: 1em; /* Ajusta la altura al tamaño de la fuente */
-  vertical-align: text-bottom; /* Alinea el cursor con la parte inferior del texto */
-  border-left: 2px solid currentColor; /* Crea el cursor como una barra sólida */
-  animation: blink 0.7s infinite; /* Agrega animación de parpadeo */
-}
-
-/* Animación de parpadeo */
-@keyframes blink {
-  0%, 100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-}
-
-
 
 
 
