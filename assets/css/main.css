@@ -64,6 +64,33 @@
   --contrast-color: #ffffff;
 }
 
+.forest-deep-background {
+  /* Fondo principal: verde pino profundo */
+  --background-color: #0b2612; /* Verde bosque oscuro intenso */
+
+  /* Superficie: marrón chocolate profundo para elementos destacados */
+  --surface-color: #4a3222; /* Marrón oscuro cálido como la corteza húmeda de un árbol */
+
+  /* Texto por defecto: beige profundo para un contraste claro pero no brillante */
+  --default-color: #e0d3b8; /* Beige terroso cálido inspirado en hojas secas y musgo seco */
+
+  /* Títulos: verde esmeralda oscuro para resaltar encabezados */
+  --heading-color: #3e7045; /* Verde vibrante como las hojas iluminadas por luz tenue */
+
+  /* Colores de acento: toques de ámbar cálido y cobre */
+  --contrast-color: #ff914d; /* Naranja ámbar vibrante inspirado en hojas otoñales */
+  --highlight-color: #c97c4f; /* Cobre oscuro para detalles y botones */
+
+  /* Bordes y líneas: marrón oscuro para una definición clara */
+  --border-color: #36251a; /* Marrón profundo con matices rojizos */
+
+  /* Sombras: más densas para mayor dramatismo */
+  --shadow-color: rgba(0, 0, 0, 0.7); /* Sombras intensas para profundidad */
+}
+
+
+
+
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
@@ -1280,46 +1307,568 @@ section,
 }
 
 
+/*--------------------------------------------------------------
+# INVENTOS GASTON
+--------------------------------------------------------------*/
+
 .swiper-button-next,
 .swiper-button-prev {
-  color: #fff; /* Cambia el color de las flechas */
-  background-color: #007bff; /* Color de fondo */
-  border-radius: 50%; /* Hace las flechas redondas */
+  color: #fff;
+  /* Cambia el color de las flechas */
+  background-color: #007bff;
+  /* Color de fondo */
+  border-radius: 50%;
+  /* Hace las flechas redondas */
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para las flechas */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Sombra para las flechas */
   opacity: 0.8;
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  opacity: 1; /* Más visible al pasar el cursor */
-  transform: scale(2.1); /* Aumenta ligeramente el tamaño al pasar el cursor */
+  opacity: 1;
+  /* Más visible al pasar el cursor */
+  transform: scale(2.1);
+  /* Aumenta ligeramente el tamaño al pasar el cursor */
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  font-size: 1rem; /* Tamaño del ícono */
+  font-size: 1rem;
+  /* Tamaño del ícono */
   font-weight: bold;
 }
 
-.stars i {
-  color: #f39c12; /* Color dorado para las estrellas */
-  font-size: 1.2rem; /* Tamaño ajustable */
-  margin-right: 2px; /* Espaciado entre estrellas */
+/*---------------------------------------------------POLEMISIMO----------------------------------*/
+.main-timeline .timeline:first-child {
+  float: left; /* Los pares van a la derecha */
+  clear: right; /* Se alinean en su propia "columna" */
+  margin-bottom: 200px !important; /* Espacio entre los elementos pares */
 }
+
+.main-timeline .timeline:nth-child(even) {
+  float: right; /* Los pares van a la derecha */
+  clear: right; /* Se alinean en su propia "columna" */
+  margin-top: 300px !important; /* Espacio entre los elementos pares */
+}
+
+.stars i {
+  color: #f39c12;
+  /* Color dorado para las estrellas */
+  font-size: 1.2rem;
+  /* Tamaño ajustable */
+  margin-right: 2px;
+  /* Espaciado entre estrellas */
+}
+
+.resume-item-container {
+  display: flex;
+  align-items: flex-start;
+  /* Alinea verticalmente la imagen con el texto */
+  gap: 1rem;
+  /* Espacio entre la imagen y el texto */
+  margin-bottom: 2rem;
+  /* Espacio entre los elementos del currículum */
+}
+
+.image-container {
+  flex-shrink: 0;
+  /* Evita que la imagen cambie de tamaño */
+}
+
+.rounded-image {
+  width: 70px;
+  /* Tamaño del círculo */
+  height: 70px;
+  border-radius: 70%;
+  /* Hace la imagen redondeada */
+  object-fit: cover;
+  /* Asegura que la imagen no se deforme */
+  border: 2px solid #ddd;
+  /* Borde opcional */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Sombra opcional */
+}
+
+.resume-content {
+  flex: 1;
+  /* Permite que el contenido textual ocupe el espacio restante */
+}
+
+
+.main-timeline {
+  position: relative;
+}
+
+.main-timeline:before,
+.main-timeline:after {
+  content: "";
+  display: block;
+  width: 100%;
+  clear: both;
+
+}
+
+.main-timeline:before {
+  content: "";
+  width: 3px;
+  height: 100%;
+  background: #bababa;
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
+.main-timeline .timeline {
+  width: 50%;
+  float: left;
+  position: relative;
+  z-index: 1;
+}
+
+.main-timeline .timeline:before,
+.main-timeline .timeline:after {
+  content: "";
+  display: block;
+  width: 100%;
+  clear: both;
+}
+
+.main-timeline .timeline:first-child:before,
+.main-timeline .timeline:last-child:before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid rgba(211, 207, 205, 1);
+  position: absolute;
+  top: 0;
+  right: -14px;
+  z-index: 1;
+}
+
+.main-timeline .timeline:last-child:before {
+  top: auto;
+  bottom: 0;
+}
+
+.main-timeline .timeline:last-child:nth-child(even):before {
+  right: auto;
+  left: -12px;
+  bottom: -2px;
+}
+
+.main-timeline .timeline-content {
+  text-align: center;
+  margin-top: 8px;
+  position: relative;
+  transition: all 0.3s ease 0s;
+}
+
+.main-timeline .timeline-content:before {
+  content: "";
+  width: 100%;
+  height: 5px;
+  background: rgba(211, 207, 205, 1);
+  position: absolute;
+  top: 88px;
+  left: 0;
+  z-index: -1;
+}
+
+.main-timeline .circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: #fff;
+  border: 8px solid rgba(211, 207, 205, 1);
+  float: left;
+  margin-right: 25px;
+  position: relative;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Sombra ligera */
+}
+
+.main-timeline .circle:hover {
+  transform: scale(1.3);
+  /* Agranda el círculo al 110% */
+  background: rgba(100, 149, 237, 0.5);
+  /* Azul claro translúcido */
+  border-color: rgba(11, 147, 3, 0.8);
+  /* Azul acero translúcido */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  /* Sombra más pronunciada */
+}
+
+.main-timeline .circle-link {
+  display: inline-block; /* Asegura que el enlace se adapte al tamaño del círculo */
+  text-decoration: none; /* Elimina subrayados predeterminados */
+}
+
+.main-timeline .circle-link:active .circle {
+  transform: scale(1); /* Vuelve al tamaño original al presionar */
+  background: rgba(100, 149, 237, 0.7); /* Color más sólido al hacer clic */
+}
+
+.main-timeline .circle:before {
+  content: "";
+  width: 26px;
+  height: 30px;
+  background: rgba(211, 207, 205, 1);
+  margin: auto;
+  position: absolute;
+  top: 0;
+  right: -33px;
+  bottom: 0;
+  z-index: -1;
+  box-shadow: inset 7px 0 9px -7px #444;
+}
+
+.main-timeline .circle span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  line-height: 268px;
+  font-size: 80px;
+  color: #454344;
+}
+
+.main-timeline .circle span:before,
+.main-timeline .circle span:after {
+  content: "";
+  width: 28px;
+  height: 50px;
+  background: #fff;
+  border-radius: 0 0 0 21px;
+  margin: auto;
+  position: absolute;
+  top: -54px;
+  right: -33px;
+  bottom: 0;
+  z-index: -1;
+}
+
+.main-timeline .circle span:after {
+  border-radius: 21px 0 0 0;
+  top: 0;
+  bottom: -56px;
+}
+
+.main-timeline .circle .img {
+  vertical-align: initial;
+  border-radius: 50%;
+}
+
+.circle img {
+  width: 100%; /* Asegúrate de que la imagen ocupe todo el círculo */
+  height: 100%; /* Recorta automáticamente para que encaje */
+  object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
+
+.main-timeline .content {
+  display: table;
+  padding-right: 40px;
+  position: relative;
+}
+
+.main-timeline .year{
+    display: block;
+    padding: 10px;
+    margin: 10px 0 50px 0;
+    background: rgba(211,207,205,1);
+    border-radius: 7px;
+    font-size: 25px;
+    color: #fff;
+}
+.main-timeline .title{
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(194, 74, 15);
+    margin-top: 0;
+}
+.main-timeline .description{
+    font-size: 14px;
+    /* color: #000000; */
+    text-align: left;
+}
+.main-timeline .icon {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid rgba(211, 207, 205, 1);
+  position: absolute;
+  top: 78px;
+  right: -14px;
+}
+
+.main-timeline .icon:before {
+  content: "";
+  width: 15px;
+  height: 25px;
+  background: rgba(211, 207, 205, 1);
+  margin: auto;
+  position: absolute;
+  top: -1px;
+  left: -15px;
+  bottom: 0;
+  z-index: -1;
+}
+
+.main-timeline .icon span:before,
+.main-timeline .icon span:after {
+  content: "";
+  width: 21px;
+  height: 25px;
+  background: #fff;
+  border-radius: 0 0 21px 0;
+  margin: auto;
+  position: absolute;
+  top: -30px;
+  left: -15px;
+  bottom: 0;
+  z-index: -1;
+}
+
+.main-timeline .icon span:after {
+  border-radius: 0 21px 0 0;
+  top: 0;
+  left: -15px;
+  bottom: -30px;
+}
+
+.main-timeline .timeline:nth-child(2n) .timeline-content,
+.main-timeline .timeline:nth-child(2n) .circle {
+  float: right;
+}
+
+.main-timeline .timeline:nth-child(2n) .circle {
+  margin: 0 0 0 25px;
+}
+
+.main-timeline .timeline:nth-child(2n) .circle:before {
+  right: auto;
+  left: -33px;
+  box-shadow: -7px 0 9px -7px #444 inset;
+}
+
+.main-timeline .timeline:nth-child(2n) .circle span:before,
+.main-timeline .timeline:nth-child(2n) .circle span:after {
+  right: auto;
+  left: -33px;
+  border-radius: 0 0 21px 0;
+}
+
+.main-timeline .timeline:nth-child(2n) .circle span:after {
+  border-radius: 0 21px 0 0;
+}
+
+.main-timeline .timeline:nth-child(2n) .content {
+  padding: 0 0 0 40px;
+  margin-left: 2px;
+}
+
+.main-timeline .timeline:nth-child(2n) .icon {
+  right: auto;
+  left: -14px;
+}
+
+.main-timeline .timeline:nth-child(2n) .icon:before,
+.main-timeline .timeline:nth-child(2n) .icon span:before,
+.main-timeline .timeline:nth-child(2n) .icon span:after {
+  left: auto;
+  right: -15px;
+}
+
+.main-timeline .timeline:nth-child(2n) .icon span:before {
+  border-radius: 0 0 0 21px;
+}
+
+.main-timeline .timeline:nth-child(2n) .icon span:after {
+  border-radius: 21px 0 0 0;
+}
+
+.main-timeline .timeline:nth-child(2) {
+  margin-top: 180px;
+}
+
+.main-timeline .timeline:nth-child(odd) {
+  margin: -175px 0 0 0;
+}
+
+.main-timeline .timeline:nth-child(even) {
+  margin-bottom: 180px;
+}
+
+.main-timeline .timeline:first-child,
+.main-timeline .timeline:last-child:nth-child(even) {
+  margin: 0;
+}
+
+@media only screen and (max-width: 990px) {
+  .main-timeline:before {
+    left: 100%;
+  }
+
+  .main-timeline .timeline {
+    width: 100%;
+    float: none;
+    margin-bottom: 20px !important;
+  }
+
+  .main-timeline .timeline:first-child:before,
+  .main-timeline .timeline:last-child:before {
+    left: auto !important;
+    right: -13px !important;
+  }
+
+  .main-timeline .timeline:nth-child(2n) .circle {
+    float: left;
+    margin: 0 25px 0 0;
+  }
+
+  .main-timeline .timeline:nth-child(2n) .circle:before {
+    right: -33px;
+    left: auto;
+    box-shadow: 7px 0 9px -7px #444 inset;
+  }
+
+  .main-timeline .timeline:nth-child(2n) .circle span:before,
+  .main-timeline .timeline:nth-child(2n) .circle span:after {
+    right: -33px;
+    left: auto;
+    border-radius: 0 0 0 21px;
+  }
+
+  .main-timeline .timeline:nth-child(2n) .circle span:after {
+    border-radius: 21px 0 0 0;
+  }
+
+  .main-timeline .timeline:nth-child(2n) .content {
+    padding: 0 40px 0 0;
+    margin-left: 0;
+  }
+
+  .main-timeline .timeline:nth-child(2n) .icon {
+    right: -14px;
+    left: auto;
+  }
+
+  .main-timeline .timeline:nth-child(2n) .icon:before,
+  .main-timeline .timeline:nth-child(2n) .icon span:before,
+  .main-timeline .timeline:nth-child(2n) .icon span:after {
+    left: -15px;
+    right: auto;
+  }
+
+  .main-timeline .timeline:nth-child(2n) .icon span:before {
+    border-radius: 0 0 21px 0;
+  }
+
+  .main-timeline .timeline:nth-child(2n) .icon span:after {
+    border-radius: 0 21px 0 0;
+  }
+
+  .main-timeline .timeline:nth-child(2),
+  .main-timeline .timeline:nth-child(odd),
+  .main-timeline .timeline:nth-child(even) {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .main-timeline:before {
+    left: 0;
+  }
+
+  .main-timeline .timeline:first-child:before,
+  .main-timeline .timeline:last-child:before {
+    left: -12px !important;
+    right: auto !important;
+  }
+
+  .main-timeline .circle,
+  .main-timeline .timeline:nth-child(2n) .circle {
+    width: 130px;
+    height: 130px;
+    float: none;
+    margin: 0 auto;
+  }
+
+  .main-timeline .timeline-content:before {
+    width: 99.5%;
+    top: 68px;
+    left: 0.5%;
+  }
+
+  .main-timeline .circle span {
+    line-height: 115px;
+    font-size: 60px;
+  }
+
+  .main-timeline .circle:before,
+  .main-timeline .circle span:before,
+  .main-timeline .circle span:after,
+  .main-timeline .icon {
+    display: none;
+  }
+
+  .main-timeline .content,
+  .main-timeline .timeline:nth-child(2n) .content {
+    padding: 0 10px;
+  }
+
+  .main-timeline .year {
+    margin-bottom: 15px;
+  }
+
+  .main-timeline .description {
+    text-align:left;
+  }
+}
+
+.typed2 {
+  display: inline; /* Asegura que el texto y el cursor estén en la misma línea */
+  white-space: nowrap; /* Evita que el texto y el cursor se dividan en líneas separadas */
+}
+
+.typed2-cursor {
+  display: inline-block; /* Asegura que el cursor esté alineado con el texto */
+  font-size: inherit !important; /* Hereda el tamaño de la fuente del texto */
+  line-height: inherit; /* Hereda la altura de línea del texto */
+  height: 1em; /* Ajusta la altura al tamaño de la fuente */
+  vertical-align: text-bottom; /* Alinea el cursor con la parte inferior del texto */
+  border-left: 2px solid currentColor; /* Crea el cursor como una barra sólida */
+  animation: blink 0.7s infinite; /* Agrega animación de parpadeo */
+}
+
+/* Animación de parpadeo */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+
+
+
+
 
 
 
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-
-
-  
-}
+.starter-section {}

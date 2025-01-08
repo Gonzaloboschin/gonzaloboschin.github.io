@@ -105,6 +105,22 @@
     });
   }
 
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.typed2').forEach((el) => {
+      const items = el.getAttribute('data-typed-items').split(',');
+      new Typed(el, {
+        strings: items,
+        typeSpeed: 50,
+        backSpeed: 30,
+        loop: true,
+        showCursor: true,
+        cursorChar: "|",
+      });
+    });
+  });
+  
+  
+
   /**
    * Initiate Pure Counter
    */
