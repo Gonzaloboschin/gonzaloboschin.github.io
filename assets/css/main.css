@@ -1345,18 +1345,6 @@ section,
   font-weight: bold;
 }
 
-/*---------------------------------------------------POLEMISIMO----------------------------------*/
-.main-timeline .timeline:first-child {
-  float: left; /* Los pares van a la derecha */
-  clear: right; /* Se alinean en su propia "columna" */
-  margin-bottom: 200px !important; /* Espacio entre los elementos pares */
-}
-
-.main-timeline .timeline:nth-child(even) {
-  float: right; /* Los pares van a la derecha */
-  clear: right; /* Se alinean en su propia "columna" */
-  margin-top: 300px !important; /* Espacio entre los elementos pares */
-}
 
 .stars i {
   color: #f39c12;
