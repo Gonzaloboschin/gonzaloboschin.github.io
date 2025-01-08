@@ -1773,105 +1773,116 @@ section,
   }
 }
 
-@media only screen and (max-width: 480px) {
 
-
-  /* Línea del timeline */
+@media only screen and (max-width: 580px) {
   .main-timeline:before {
-    left: 0; /* Línea vertical en el lado izquierdo */
-    width: 3px; /* Ancho de la línea */
+    left: 100%;
   }
 
-  /* Configuración del timeline general */
+  .main-timeline .year{
+    display: block;
+    padding: 15px 0px;
+    margin: 6px 0 50px 0;
+    background: rgba(211,207,205,1);
+    border-radius: 7px;
+    font-size: 15px;
+    color: #fff;
+}
+
+
   .main-timeline .timeline {
-    width: 100%; /* Ocupa todo el ancho */
-    float: none; /* Quita flotantes */
-    margin-bottom: 30px; /* Espaciado uniforme entre items */
-    position: relative; /* Necesario para posicionar los círculos pequeños */
+    width: 100%;
+    float: none;
+    margin-bottom: 20px !important;
   }
 
-  /* Círculos al inicio y al final del timeline */
   .main-timeline .timeline:first-child:before,
   .main-timeline .timeline:last-child:before {
-    content: "";
-    width: 15px; /* Tamaño del círculo */
-    height: 15px;
-    border-radius: 50%; /* Forma circular */
-    background: #fff; /* Fondo blanco */
-    border: 3px solid rgba(211, 207, 205, 1); /* Borde */
-    position: absolute;
-    left: 0; /* Alineado con la línea vertical */
-    transform: translateX(-50%); /* Ajusta el centrado respecto a la línea */
-    z-index: 2; /* Asegura que esté encima de la línea */
-    display:none;
+    left: auto !important;
+    right: -13px !important;
   }
 
-  /* Configuración de círculos del contenido */
-  .main-timeline .circle {
-    width: 80px; /* Tamaño más pequeño para móviles */
-    height: 80px;
-    margin: 0 auto; /* Centra el círculo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Evita que la imagen se desborde */
+  .main-timeline .timeline:nth-child(2n) .circle {
+    float: left;
+    margin: 0 25px 0 0;
   }
 
-  /* Imágenes dentro de los círculos */
-  .main-timeline .circle img {
+  .main-timeline .timeline:nth-child(2n) .circle:before {
+    right: -33px;
+    left: auto;
+    box-shadow: 7px 0 9px -7px #444 inset;
+  }
+
+  .main-timeline .timeline:nth-child(2n) .circle span:before,
+  .main-timeline .timeline:nth-child(2n) .circle span:after {
+    right: -33px;
+    left: auto;
+    border-radius: 0 0 0 21px;
+  }
+
+  .main-timeline .timeline:nth-child(2n) .circle span:after {
+    border-radius: 21px 0 0 0;
+  }
+
+  .main-timeline .timeline:nth-child(2n) .content,
+  .main-timeline .timeline:nth-child(2n+1) .content {
+    padding: 0 40px 0 0;
+    margin-left: 0;
     width: 100%;
-    height: auto;
-    border-radius: 50%; /* Mantiene el formato circular */
   }
 
-  .main-timeline .circle:hover {
-    transform: scale(1.3);
-    /* Agranda el círculo al 110% */
-    background: rgba(100, 149, 237, 0.5);
-    /* Azul claro translúcido */
-    border-color: rgba(11, 147, 3, 0.8);
-    /* Azul acero translúcido */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-    /* Sombra más pronunciada */
-  }
-  
-  .main-timeline .circle-link {
-    display: inline-block; /* Asegura que el enlace se adapte al tamaño del círculo */
-    text-decoration: none; /* Elimina subrayados predeterminados */
+  .main-timeline .timeline:nth-child(2n) .icon {
+    right: -14px;
+    left: auto;
   }
 
-  /* Contenido del timeline */
-  .main-timeline .timeline-content {
-    padding: 10px; /* Relleno más pequeño para dispositivos móviles */
-    text-align: center; /* Centra el texto para mejor lectura */
-    position: relative;
+  .main-timeline .timeline:nth-child(2n) .icon:before,
+  .main-timeline .timeline:nth-child(2n) .icon span:before,
+  .main-timeline .timeline:nth-child(2n) .icon span:after {
+    left: -15px;
+    right: auto;
   }
 
-  /* Eliminar barras horizontales */
-  .main-timeline .timeline-content:before {
-    display: none; /* Oculta las líneas horizontales */
+  .main-timeline .timeline:nth-child(2n) .icon span:before {
+    border-radius: 0 0 21px 0;
   }
 
-  /* Años en el timeline */
-  .main-timeline .year {
-    margin-bottom: 10px; /* Espaciado más pequeño */
-    font-size: 1rem; /* Ajusta tamaño de fuente */
-    text-align: center;
+  .main-timeline .timeline:nth-child(2n) .icon span:after {
+    border-radius: 0 21px 0 0;
   }
 
-  /* Descripciones */
-  .main-timeline .description {
-    font-size: 0.85rem; /* Tamaño de texto reducido */
-    line-height: 1.4; /* Mejor separación entre líneas */
-    text-align: justify; /* Para lectura más fluida */
-    padding: 0 10px; /* Ajusta márgenes laterales */
-  }
-
-  /* Ajustes para el contenido */
-  .main-timeline .content {
-    padding: 0 10px; /* Ajusta los márgenes internos */
+  .main-timeline .timeline:nth-child(2),
+  .main-timeline .timeline:nth-child(odd),
+  .main-timeline .timeline:nth-child(even) {
+    margin: 0;
   }
 }
+
+
+.typed2 {
+  display: inline; /* Mantiene el texto y el cursor en la misma línea */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.typed2-cursor {
+  display: inline-block; /* Mantiene el cursor en la misma línea */
+  font-size: inherit; /* Hereda dinámicamente el tamaño de la fuente del texto */
+  line-height: inherit; /* Asegura que la altura coincida con el texto */
+  height: auto; /* Permite que el tamaño del cursor se ajuste automáticamente */
+  border-left: 2px solid currentColor; /* Define la barra como una línea sólida */
+  animation: blink 0.7s infinite; /* Agrega un parpadeo al cursor */
+}
+
+/* Animación de parpadeo */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 
 
 
